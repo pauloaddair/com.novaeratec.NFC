@@ -2,9 +2,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.novaeratec.NFCreader"
-        version   = "1.2.31">
+        version   = "1.2.32">
     <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
-    <gap:plugin name="com.chariotsolutions.nfc" />
+    <gap:plugin name="com.chariotsolutions.nfc.plugin" />
     <name>NfcReader</name>
     <description>
         PhoneGap NFC Reader Demo
