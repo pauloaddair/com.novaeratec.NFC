@@ -8,13 +8,13 @@ var app = {
     deviceready: function () {
     
         function failure(reason) {
-            navigator.notification.alert(reason, function() {}, "There was a problem");
+            alert(reason, function() {}, "There was a problem");
         }
 
         nfc.addNdefListener(
             app.onNdef,
             function() {
-                console.log("Listening for NDEF tags.");
+                alert("Listening for NDEF tags.");
             },
             failure
         );
@@ -25,7 +25,7 @@ var app = {
             nfc.addTagDiscoveredListener(
                 app.onNfc,
                 function() {
-                    console.log("Listening for non-NDEF tags.");
+                    alert("Listening for non-NDEF tags.");
                 },
                 failure
             );
@@ -38,7 +38,7 @@ var app = {
                 'text/pg',
                 app.onNdef,
                 function() {
-                    console.log("Listening for NDEF mime tags with type text/pg.");
+                    alert("Listening for NDEF mime tags with type text/pg.");
                 },
                 failure
             );
@@ -52,7 +52,7 @@ var app = {
         
         var tag = nfcEvent.tag;
         
-        console.log(JSON.stringify(nfcEvent.tag));
+        alert(JSON.stringify(nfcEvent.tag));
         app.clearScreen();
 
         tagContents.innerHTML = app.nonNdefTagTemplate(tag);    
